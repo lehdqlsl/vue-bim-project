@@ -1,0 +1,659 @@
+<template>
+    <div class="container2">
+        <div class="inner">
+            <form id="articleVO" onsubmit="fn_egov_updt_article(document.forms[0]); return false;"
+                  action="http://192.168.50.68:9080/cop/bbs/updateArticle.do" method="post"
+                  enctype="multipart/form-data">
+                <div class="project_area">
+                    <h3>게시글 수정</h3>
+                    <span class="filsoo"><em>*</em>필수 입력 항목입니다.</span>
+
+                    <div class="tableBox">
+
+                        <table class="form" summary="게시글의 등록 가능한 내용을 입력하여 등록 버튼을 클릭하여 수정한다.">
+                            <caption>게시글 수정</caption>
+                            <colgroup>
+                                <col style="width:15%">
+                                <col style="width:35%">
+                                <col style="width:15%">
+                                <col style="width:35%">
+                            </colgroup>
+                            <tbody>
+
+                            <tr>
+                                <th scope="row"><label for="thumbfile">비밀글</label></th>
+                                <td colspan="3">
+                                    <input id="secretAt1" name="secretAt" type="checkbox" value="Y"><input type="hidden"
+                                                                                                           name="_secretAt"
+                                                                                                           value="on">
+                                    <div></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="file_name">제목<em>*</em></label></th>
+                                <td colspan="3">
+                                    <input id="nttSj" name="nttSj" title="제목 입력" class="w200" type="text" value="게시글 제목"
+                                           maxlength="70">
+                                    <div></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="info_type">내용<em>*</em></label></th>
+                                <td colspan="3">
+                                    <textarea id="nttCn" name="nttCn" title="내용 입력" rows="20" cols="300"
+                                              style="visibility: hidden; display: none;">&lt;p&gt;ㅁㅁㅁㅁㅁㅁㅁ&lt;/p&gt;</textarea>
+                                    <div id="cke_nttCn"
+                                         class="cke_1 cke cke_reset cke_chrome cke_editor_nttCn cke_ltr cke_browser_webkit"
+                                         dir="ltr" lang="ko" role="application" aria-labelledby="cke_nttCn_arialbl">
+                                        <span id="cke_nttCn_arialbl" class="cke_voice_label">리치 텍스트 편집기, nttCn</span>
+                                        <div class="cke_inner cke_reset" role="presentation"><span id="cke_1_top"
+                                                                                                   class="cke_top cke_reset_all"
+                                                                                                   role="presentation"
+                                                                                                   style="height: auto; user-select: none;"><span
+                                            id="cke_8" class="cke_voice_label">에디터 툴바</span><span id="cke_1_toolbox"
+                                                                                                  class="cke_toolbox"
+                                                                                                  role="group"
+                                                                                                  aria-labelledby="cke_8"
+                                                                                                  onmousedown="return false;"><span
+                                            id="cke_11" class="cke_toolbar" aria-labelledby="cke_11_label"
+                                            role="toolbar"><span id="cke_11_label"
+                                                                 class="cke_voice_label">클립보드/실행 취소</span><span
+                                            class="cke_toolbar_start"></span><span class="cke_toolgroup"
+                                                                                   role="presentation"><a id="cke_12"
+                                                                                                          class="cke_button cke_button__cut cke_button_disabled "
+                                                                                                          href="javascript:void(&#39;잘라내기&#39;)"
+                                                                                                          title="잘라내기 (컨트롤+X)"
+                                                                                                          tabindex="-1"
+                                                                                                          hidefocus="true"
+                                                                                                          role="button"
+                                                                                                          aria-labelledby="cke_12_label"
+                                                                                                          aria-describedby="cke_12_description"
+                                                                                                          aria-haspopup="false"
+                                                                                                          aria-disabled="true"
+                                                                                                          onkeydown="return CKEDITOR.tools.callFunction(2,event);"
+                                                                                                          onfocus="return CKEDITOR.tools.callFunction(3,event);"
+                                                                                                          onclick="CKEDITOR.tools.callFunction(4,this);return false;"><span
+                                            class="cke_button_icon cke_button__cut_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -264px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_12_label" class="cke_button_label cke_button__cut_label"
+                                            aria-hidden="false">잘라내기</span><span id="cke_12_description"
+                                                                                 class="cke_button_label"
+                                                                                 aria-hidden="false">키보드 단축키 컨트롤+X</span></a><a
+                                            id="cke_13" class="cke_button cke_button__copy cke_button_disabled "
+                                            href="javascript:void(&#39;복사&#39;)" title="복사 (컨트롤+C)" tabindex="-1"
+                                            hidefocus="true" role="button" aria-labelledby="cke_13_label"
+                                            aria-describedby="cke_13_description" aria-haspopup="false"
+                                            aria-disabled="true"
+                                            onkeydown="return CKEDITOR.tools.callFunction(5,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(6,event);"
+                                            onclick="CKEDITOR.tools.callFunction(7,this);return false;"><span
+                                            class="cke_button_icon cke_button__copy_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -216px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_13_label" class="cke_button_label cke_button__copy_label"
+                                            aria-hidden="false">복사</span><span id="cke_13_description"
+                                                                               class="cke_button_label"
+                                                                               aria-hidden="false">키보드 단축키 컨트롤+C</span></a><a
+                                            id="cke_14" class="cke_button cke_button__paste cke_button_off"
+                                            href="javascript:void(&#39;붙여넣기&#39;)" title="붙여넣기 (컨트롤+V)" tabindex="-1"
+                                            hidefocus="true" role="button" aria-labelledby="cke_14_label"
+                                            aria-describedby="cke_14_description" aria-haspopup="false"
+                                            aria-disabled="false"
+                                            onkeydown="return CKEDITOR.tools.callFunction(8,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(9,event);"
+                                            onclick="CKEDITOR.tools.callFunction(10,this);return false;"><span
+                                            class="cke_button_icon cke_button__paste_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -312px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_14_label" class="cke_button_label cke_button__paste_label"
+                                            aria-hidden="false">붙여넣기</span><span id="cke_14_description"
+                                                                                 class="cke_button_label"
+                                                                                 aria-hidden="false">키보드 단축키 컨트롤+V</span></a><a
+                                            id="cke_15" class="cke_button cke_button__pastetext cke_button_off"
+                                            href="javascript:void(&#39;텍스트로 붙여넣기&#39;)" title="텍스트로 붙여넣기 (컨트롤+시프트+V)"
+                                            tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_15_label"
+                                            aria-describedby="cke_15_description" aria-haspopup="false"
+                                            aria-disabled="false"
+                                            onkeydown="return CKEDITOR.tools.callFunction(11,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(12,event);"
+                                            onclick="CKEDITOR.tools.callFunction(13,this);return false;"><span
+                                            class="cke_button_icon cke_button__pastetext_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -720px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_15_label" class="cke_button_label cke_button__pastetext_label"
+                                            aria-hidden="false">텍스트로 붙여넣기</span><span id="cke_15_description"
+                                                                                      class="cke_button_label"
+                                                                                      aria-hidden="false">키보드 단축키 컨트롤+시프트+V</span></a><a
+                                            id="cke_16" class="cke_button cke_button__pastefromword cke_button_off"
+                                            href="javascript:void(&#39;MS Word 에서 붙여넣기&#39;)" title="MS Word 에서 붙여넣기"
+                                            tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_16_label"
+                                            aria-describedby="cke_16_description" aria-haspopup="false"
+                                            aria-disabled="false"
+                                            onkeydown="return CKEDITOR.tools.callFunction(14,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(15,event);"
+                                            onclick="CKEDITOR.tools.callFunction(16,this);return false;"><span
+                                            class="cke_button_icon cke_button__pastefromword_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -768px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_16_label" class="cke_button_label cke_button__pastefromword_label"
+                                            aria-hidden="false">MS Word 에서 붙여넣기</span><span id="cke_16_description"
+                                                                                            class="cke_button_label"
+                                                                                            aria-hidden="false"></span></a><span
+                                            class="cke_toolbar_separator" role="separator"></span><a id="cke_17"
+                                                                                                     class="cke_button cke_button__undo cke_button_disabled "
+                                                                                                     href="javascript:void(&#39;실행 취소&#39;)"
+                                                                                                     title="실행 취소 (컨트롤+Z)"
+                                                                                                     tabindex="-1"
+                                                                                                     hidefocus="true"
+                                                                                                     role="button"
+                                                                                                     aria-labelledby="cke_17_label"
+                                                                                                     aria-describedby="cke_17_description"
+                                                                                                     aria-haspopup="false"
+                                                                                                     aria-disabled="true"
+                                                                                                     onkeydown="return CKEDITOR.tools.callFunction(17,event);"
+                                                                                                     onfocus="return CKEDITOR.tools.callFunction(18,event);"
+                                                                                                     onclick="CKEDITOR.tools.callFunction(19,this);return false;"><span
+                                            class="cke_button_icon cke_button__undo_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -1008px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_17_label" class="cke_button_label cke_button__undo_label"
+                                            aria-hidden="false">실행 취소</span><span id="cke_17_description"
+                                                                                  class="cke_button_label"
+                                                                                  aria-hidden="false">키보드 단축키 컨트롤+Z</span></a><a
+                                            id="cke_18" class="cke_button cke_button__redo cke_button_disabled "
+                                            href="javascript:void(&#39;다시 실행&#39;)" title="다시 실행 (컨트롤+Y)" tabindex="-1"
+                                            hidefocus="true" role="button" aria-labelledby="cke_18_label"
+                                            aria-describedby="cke_18_description" aria-haspopup="false"
+                                            aria-disabled="true"
+                                            onkeydown="return CKEDITOR.tools.callFunction(20,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(21,event);"
+                                            onclick="CKEDITOR.tools.callFunction(22,this);return false;"><span
+                                            class="cke_button_icon cke_button__redo_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -960px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_18_label" class="cke_button_label cke_button__redo_label"
+                                            aria-hidden="false">다시 실행</span><span id="cke_18_description"
+                                                                                  class="cke_button_label"
+                                                                                  aria-hidden="false">키보드 단축키 컨트롤+Y</span></a></span><span
+                                            class="cke_toolbar_end"></span></span><span id="cke_19" class="cke_toolbar"
+                                                                                        aria-labelledby="cke_19_label"
+                                                                                        role="toolbar"><span
+                                            id="cke_19_label" class="cke_voice_label">편집</span><span
+                                            class="cke_toolbar_start"></span><span class="cke_toolgroup"
+                                                                                   role="presentation"><a id="cke_20"
+                                                                                                          class="cke_button cke_button__scayt cke_button_off cke_button_expandable"
+                                                                                                          href="javascript:void(&#39;Spell Check&#39;)"
+                                                                                                          title="Spell Check"
+                                                                                                          tabindex="-1"
+                                                                                                          hidefocus="true"
+                                                                                                          role="button"
+                                                                                                          aria-labelledby="cke_20_label"
+                                                                                                          aria-describedby="cke_20_description"
+                                                                                                          aria-haspopup="menu"
+                                                                                                          aria-disabled="false"
+                                                                                                          onkeydown="return CKEDITOR.tools.callFunction(23,event);"
+                                                                                                          onfocus="return CKEDITOR.tools.callFunction(24,event);"
+                                                                                                          onclick="CKEDITOR.tools.callFunction(25,this);return false;"
+                                                                                                          aria-expanded="false"><span
+                                            class="cke_button_icon cke_button__scayt_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -888px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_20_label" class="cke_button_label cke_button__scayt_label"
+                                            aria-hidden="false">Spell Check As You Type</span><span
+                                            id="cke_20_description" class="cke_button_label" aria-hidden="false"></span><span
+                                            class="cke_button_arrow"></span></a></span><span
+                                            class="cke_toolbar_end"></span></span><span id="cke_21" class="cke_toolbar"
+                                                                                        aria-labelledby="cke_21_label"
+                                                                                        role="toolbar"><span
+                                            id="cke_21_label" class="cke_voice_label">링크</span><span
+                                            class="cke_toolbar_start"></span><span class="cke_toolgroup"
+                                                                                   role="presentation"><a id="cke_22"
+                                                                                                          class="cke_button cke_button__link cke_button_off"
+                                                                                                          href="javascript:void(&#39;링크 삽입/변경&#39;)"
+                                                                                                          title="링크 삽입/변경 (컨트롤+K)"
+                                                                                                          tabindex="-1"
+                                                                                                          hidefocus="true"
+                                                                                                          role="button"
+                                                                                                          aria-labelledby="cke_22_label"
+                                                                                                          aria-describedby="cke_22_description"
+                                                                                                          aria-haspopup="false"
+                                                                                                          aria-disabled="false"
+                                                                                                          onkeydown="return CKEDITOR.tools.callFunction(26,event);"
+                                                                                                          onfocus="return CKEDITOR.tools.callFunction(27,event);"
+                                                                                                          onclick="CKEDITOR.tools.callFunction(28,this);return false;"><span
+                                            class="cke_button_icon cke_button__link_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -528px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_22_label" class="cke_button_label cke_button__link_label"
+                                            aria-hidden="false">링크 삽입/변경</span><span id="cke_22_description"
+                                                                                     class="cke_button_label"
+                                                                                     aria-hidden="false">키보드 단축키 컨트롤+K</span></a><a
+                                            id="cke_23" class="cke_button cke_button__unlink cke_button_disabled "
+                                            href="javascript:void(&#39;링크 지우기&#39;)" title="링크 지우기" tabindex="-1"
+                                            hidefocus="true" role="button" aria-labelledby="cke_23_label"
+                                            aria-describedby="cke_23_description" aria-haspopup="false"
+                                            aria-disabled="true"
+                                            onkeydown="return CKEDITOR.tools.callFunction(29,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(30,event);"
+                                            onclick="CKEDITOR.tools.callFunction(31,this);return false;"><span
+                                            class="cke_button_icon cke_button__unlink_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -552px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_23_label" class="cke_button_label cke_button__unlink_label"
+                                            aria-hidden="false">링크 지우기</span><span id="cke_23_description"
+                                                                                   class="cke_button_label"
+                                                                                   aria-hidden="false"></span></a><a
+                                            id="cke_24" class="cke_button cke_button__anchor cke_button_off"
+                                            href="javascript:void(&#39;책갈피&#39;)" title="책갈피" tabindex="-1"
+                                            hidefocus="true" role="button" aria-labelledby="cke_24_label"
+                                            aria-describedby="cke_24_description" aria-haspopup="false"
+                                            aria-disabled="false"
+                                            onkeydown="return CKEDITOR.tools.callFunction(32,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(33,event);"
+                                            onclick="CKEDITOR.tools.callFunction(34,this);return false;"><span
+                                            class="cke_button_icon cke_button__anchor_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -504px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_24_label" class="cke_button_label cke_button__anchor_label"
+                                            aria-hidden="false">책갈피</span><span id="cke_24_description"
+                                                                                class="cke_button_label"
+                                                                                aria-hidden="false"></span></a></span><span
+                                            class="cke_toolbar_end"></span></span><span id="cke_25" class="cke_toolbar"
+                                                                                        aria-labelledby="cke_25_label"
+                                                                                        role="toolbar"><span
+                                            id="cke_25_label" class="cke_voice_label">삽입</span><span
+                                            class="cke_toolbar_start"></span><span class="cke_toolgroup"
+                                                                                   role="presentation"><a id="cke_26"
+                                                                                                          class="cke_button cke_button__image cke_button_off"
+                                                                                                          href="javascript:void(&#39;이미지&#39;)"
+                                                                                                          title="이미지"
+                                                                                                          tabindex="-1"
+                                                                                                          hidefocus="true"
+                                                                                                          role="button"
+                                                                                                          aria-labelledby="cke_26_label"
+                                                                                                          aria-describedby="cke_26_description"
+                                                                                                          aria-haspopup="false"
+                                                                                                          aria-disabled="false"
+                                                                                                          onkeydown="return CKEDITOR.tools.callFunction(35,event);"
+                                                                                                          onfocus="return CKEDITOR.tools.callFunction(36,event);"
+                                                                                                          onclick="CKEDITOR.tools.callFunction(37,this);return false;"><span
+                                            class="cke_button_icon cke_button__image_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -360px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_26_label" class="cke_button_label cke_button__image_label"
+                                            aria-hidden="false">이미지</span><span id="cke_26_description"
+                                                                                class="cke_button_label"
+                                                                                aria-hidden="false"></span></a><a
+                                            id="cke_27" class="cke_button cke_button__table cke_button_off"
+                                            href="javascript:void(&#39;표&#39;)" title="표" tabindex="-1" hidefocus="true"
+                                            role="button" aria-labelledby="cke_27_label"
+                                            aria-describedby="cke_27_description" aria-haspopup="false"
+                                            aria-disabled="false"
+                                            onkeydown="return CKEDITOR.tools.callFunction(38,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(39,event);"
+                                            onclick="CKEDITOR.tools.callFunction(40,this);return false;"><span
+                                            class="cke_button_icon cke_button__table_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -912px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_27_label" class="cke_button_label cke_button__table_label"
+                                            aria-hidden="false">표</span><span id="cke_27_description"
+                                                                              class="cke_button_label"
+                                                                              aria-hidden="false"></span></a><a
+                                            id="cke_28" class="cke_button cke_button__horizontalrule cke_button_off"
+                                            href="javascript:void(&#39;가로 줄 삽입&#39;)" title="가로 줄 삽입" tabindex="-1"
+                                            hidefocus="true" role="button" aria-labelledby="cke_28_label"
+                                            aria-describedby="cke_28_description" aria-haspopup="false"
+                                            aria-disabled="false"
+                                            onkeydown="return CKEDITOR.tools.callFunction(41,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(42,event);"
+                                            onclick="CKEDITOR.tools.callFunction(43,this);return false;"><span
+                                            class="cke_button_icon cke_button__horizontalrule_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -336px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_28_label" class="cke_button_label cke_button__horizontalrule_label"
+                                            aria-hidden="false">가로 줄 삽입</span><span id="cke_28_description"
+                                                                                    class="cke_button_label"
+                                                                                    aria-hidden="false"></span></a><a
+                                            id="cke_29" class="cke_button cke_button__specialchar cke_button_off"
+                                            href="javascript:void(&#39;특수문자 삽입&#39;)" title="특수문자 삽입" tabindex="-1"
+                                            hidefocus="true" role="button" aria-labelledby="cke_29_label"
+                                            aria-describedby="cke_29_description" aria-haspopup="false"
+                                            aria-disabled="false"
+                                            onkeydown="return CKEDITOR.tools.callFunction(44,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(45,event);"
+                                            onclick="CKEDITOR.tools.callFunction(46,this);return false;"><span
+                                            class="cke_button_icon cke_button__specialchar_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -864px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_29_label" class="cke_button_label cke_button__specialchar_label"
+                                            aria-hidden="false">특수문자 삽입</span><span id="cke_29_description"
+                                                                                    class="cke_button_label"
+                                                                                    aria-hidden="false"></span></a></span><span
+                                            class="cke_toolbar_end"></span></span><span id="cke_30" class="cke_toolbar"
+                                                                                        aria-labelledby="cke_30_label"
+                                                                                        role="toolbar"><span
+                                            id="cke_30_label" class="cke_voice_label">도구</span><span
+                                            class="cke_toolbar_start"></span><span class="cke_toolgroup"
+                                                                                   role="presentation"><a id="cke_31"
+                                                                                                          class="cke_button cke_button__maximize cke_button_off"
+                                                                                                          href="javascript:void(&#39;최대화&#39;)"
+                                                                                                          title="최대화"
+                                                                                                          tabindex="-1"
+                                                                                                          hidefocus="true"
+                                                                                                          role="button"
+                                                                                                          aria-labelledby="cke_31_label"
+                                                                                                          aria-describedby="cke_31_description"
+                                                                                                          aria-haspopup="false"
+                                                                                                          aria-disabled="false"
+                                                                                                          onkeydown="return CKEDITOR.tools.callFunction(47,event);"
+                                                                                                          onfocus="return CKEDITOR.tools.callFunction(48,event);"
+                                                                                                          onclick="CKEDITOR.tools.callFunction(49,this);return false;"><span
+                                            class="cke_button_icon cke_button__maximize_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -672px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_31_label" class="cke_button_label cke_button__maximize_label"
+                                            aria-hidden="false">최대화</span><span id="cke_31_description"
+                                                                                class="cke_button_label"
+                                                                                aria-hidden="false"></span></a></span><span
+                                            class="cke_toolbar_end"></span></span><span id="cke_32" class="cke_toolbar"
+                                                                                        aria-labelledby="cke_32_label"
+                                                                                        role="toolbar"><span
+                                            id="cke_32_label" class="cke_voice_label">문서</span><span
+                                            class="cke_toolbar_start"></span><span class="cke_toolgroup"
+                                                                                   role="presentation"><a id="cke_33"
+                                                                                                          class="cke_button cke_button__source cke_button_off"
+                                                                                                          href="javascript:void(&#39;소스&#39;)"
+                                                                                                          title="소스"
+                                                                                                          tabindex="-1"
+                                                                                                          hidefocus="true"
+                                                                                                          role="button"
+                                                                                                          aria-labelledby="cke_33_label"
+                                                                                                          aria-describedby="cke_33_description"
+                                                                                                          aria-haspopup="false"
+                                                                                                          aria-disabled="false"
+                                                                                                          onkeydown="return CKEDITOR.tools.callFunction(50,event);"
+                                                                                                          onfocus="return CKEDITOR.tools.callFunction(51,event);"
+                                                                                                          onclick="CKEDITOR.tools.callFunction(52,this);return false;"><span
+                                            class="cke_button_icon cke_button__source_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -840px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_33_label" class="cke_button_label cke_button__source_label"
+                                            aria-hidden="false">소스</span><span id="cke_33_description"
+                                                                               class="cke_button_label"
+                                                                               aria-hidden="false"></span></a></span><span
+                                            class="cke_toolbar_end"></span></span><span
+                                            class="cke_toolbar_break"></span><span id="cke_34" class="cke_toolbar"
+                                                                                   aria-labelledby="cke_34_label"
+                                                                                   role="toolbar"><span
+                                            id="cke_34_label" class="cke_voice_label">기본 스타일</span><span
+                                            class="cke_toolbar_start"></span><span class="cke_toolgroup"
+                                                                                   role="presentation"><a id="cke_35"
+                                                                                                          class="cke_button cke_button__bold cke_button_off"
+                                                                                                          href="javascript:void(&#39;굵게&#39;)"
+                                                                                                          title="굵게 (컨트롤+B)"
+                                                                                                          tabindex="-1"
+                                                                                                          hidefocus="true"
+                                                                                                          role="button"
+                                                                                                          aria-labelledby="cke_35_label"
+                                                                                                          aria-describedby="cke_35_description"
+                                                                                                          aria-haspopup="false"
+                                                                                                          aria-disabled="false"
+                                                                                                          onkeydown="return CKEDITOR.tools.callFunction(53,event);"
+                                                                                                          onfocus="return CKEDITOR.tools.callFunction(54,event);"
+                                                                                                          onclick="CKEDITOR.tools.callFunction(55,this);return false;"><span
+                                            class="cke_button_icon cke_button__bold_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -24px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_35_label" class="cke_button_label cke_button__bold_label"
+                                            aria-hidden="false">굵게</span><span id="cke_35_description"
+                                                                               class="cke_button_label"
+                                                                               aria-hidden="false">키보드 단축키 컨트롤+B</span></a><a
+                                            id="cke_36" class="cke_button cke_button__italic cke_button_off"
+                                            href="javascript:void(&#39;기울임꼴&#39;)" title="기울임꼴 (컨트롤+I)" tabindex="-1"
+                                            hidefocus="true" role="button" aria-labelledby="cke_36_label"
+                                            aria-describedby="cke_36_description" aria-haspopup="false"
+                                            aria-disabled="false"
+                                            onkeydown="return CKEDITOR.tools.callFunction(56,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(57,event);"
+                                            onclick="CKEDITOR.tools.callFunction(58,this);return false;"><span
+                                            class="cke_button_icon cke_button__italic_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -48px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_36_label" class="cke_button_label cke_button__italic_label"
+                                            aria-hidden="false">기울임꼴</span><span id="cke_36_description"
+                                                                                 class="cke_button_label"
+                                                                                 aria-hidden="false">키보드 단축키 컨트롤+I</span></a><a
+                                            id="cke_37" class="cke_button cke_button__strike cke_button_off"
+                                            href="javascript:void(&#39;취소선&#39;)" title="취소선" tabindex="-1"
+                                            hidefocus="true" role="button" aria-labelledby="cke_37_label"
+                                            aria-describedby="cke_37_description" aria-haspopup="false"
+                                            aria-disabled="false"
+                                            onkeydown="return CKEDITOR.tools.callFunction(59,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(60,event);"
+                                            onclick="CKEDITOR.tools.callFunction(61,this);return false;"><span
+                                            class="cke_button_icon cke_button__strike_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -72px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_37_label" class="cke_button_label cke_button__strike_label"
+                                            aria-hidden="false">취소선</span><span id="cke_37_description"
+                                                                                class="cke_button_label"
+                                                                                aria-hidden="false"></span></a><span
+                                            class="cke_toolbar_separator" role="separator"></span><a id="cke_38"
+                                                                                                     class="cke_button cke_button__removeformat cke_button_off"
+                                                                                                     href="javascript:void(&#39;형식 지우기&#39;)"
+                                                                                                     title="형식 지우기"
+                                                                                                     tabindex="-1"
+                                                                                                     hidefocus="true"
+                                                                                                     role="button"
+                                                                                                     aria-labelledby="cke_38_label"
+                                                                                                     aria-describedby="cke_38_description"
+                                                                                                     aria-haspopup="false"
+                                                                                                     aria-disabled="false"
+                                                                                                     onkeydown="return CKEDITOR.tools.callFunction(62,event);"
+                                                                                                     onfocus="return CKEDITOR.tools.callFunction(63,event);"
+                                                                                                     onclick="CKEDITOR.tools.callFunction(64,this);return false;"><span
+                                            class="cke_button_icon cke_button__removeformat_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -792px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_38_label" class="cke_button_label cke_button__removeformat_label"
+                                            aria-hidden="false">형식 지우기</span><span id="cke_38_description"
+                                                                                   class="cke_button_label"
+                                                                                   aria-hidden="false"></span></a></span><span
+                                            class="cke_toolbar_end"></span></span><span id="cke_39" class="cke_toolbar"
+                                                                                        aria-labelledby="cke_39_label"
+                                                                                        role="toolbar"><span
+                                            id="cke_39_label" class="cke_voice_label">단락</span><span
+                                            class="cke_toolbar_start"></span><span class="cke_toolgroup"
+                                                                                   role="presentation"><a id="cke_40"
+                                                                                                          class="cke_button cke_button__numberedlist cke_button_off"
+                                                                                                          href="javascript:void(&#39;순서 있는 목록&#39;)"
+                                                                                                          title="순서 있는 목록"
+                                                                                                          tabindex="-1"
+                                                                                                          hidefocus="true"
+                                                                                                          role="button"
+                                                                                                          aria-labelledby="cke_40_label"
+                                                                                                          aria-describedby="cke_40_description"
+                                                                                                          aria-haspopup="false"
+                                                                                                          aria-disabled="false"
+                                                                                                          onkeydown="return CKEDITOR.tools.callFunction(65,event);"
+                                                                                                          onfocus="return CKEDITOR.tools.callFunction(66,event);"
+                                                                                                          onclick="CKEDITOR.tools.callFunction(67,this);return false;"><span
+                                            class="cke_button_icon cke_button__numberedlist_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -648px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_40_label" class="cke_button_label cke_button__numberedlist_label"
+                                            aria-hidden="false">순서 있는 목록</span><span id="cke_40_description"
+                                                                                     class="cke_button_label"
+                                                                                     aria-hidden="false"></span></a><a
+                                            id="cke_41" class="cke_button cke_button__bulletedlist cke_button_off"
+                                            href="javascript:void(&#39;순서 없는 목록&#39;)" title="순서 없는 목록" tabindex="-1"
+                                            hidefocus="true" role="button" aria-labelledby="cke_41_label"
+                                            aria-describedby="cke_41_description" aria-haspopup="false"
+                                            aria-disabled="false"
+                                            onkeydown="return CKEDITOR.tools.callFunction(68,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(69,event);"
+                                            onclick="CKEDITOR.tools.callFunction(70,this);return false;"><span
+                                            class="cke_button_icon cke_button__bulletedlist_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -600px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_41_label" class="cke_button_label cke_button__bulletedlist_label"
+                                            aria-hidden="false">순서 없는 목록</span><span id="cke_41_description"
+                                                                                     class="cke_button_label"
+                                                                                     aria-hidden="false"></span></a><span
+                                            class="cke_toolbar_separator" role="separator"></span><a id="cke_42"
+                                                                                                     class="cke_button cke_button__outdent cke_button_disabled "
+                                                                                                     href="javascript:void(&#39;내어쓰기&#39;)"
+                                                                                                     title="내어쓰기"
+                                                                                                     tabindex="-1"
+                                                                                                     hidefocus="true"
+                                                                                                     role="button"
+                                                                                                     aria-labelledby="cke_42_label"
+                                                                                                     aria-describedby="cke_42_description"
+                                                                                                     aria-haspopup="false"
+                                                                                                     aria-disabled="true"
+                                                                                                     onkeydown="return CKEDITOR.tools.callFunction(71,event);"
+                                                                                                     onfocus="return CKEDITOR.tools.callFunction(72,event);"
+                                                                                                     onclick="CKEDITOR.tools.callFunction(73,this);return false;"><span
+                                            class="cke_button_icon cke_button__outdent_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -456px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_42_label" class="cke_button_label cke_button__outdent_label"
+                                            aria-hidden="false">내어쓰기</span><span id="cke_42_description"
+                                                                                 class="cke_button_label"
+                                                                                 aria-hidden="false"></span></a><a
+                                            id="cke_43" class="cke_button cke_button__indent cke_button_off"
+                                            href="javascript:void(&#39;들여쓰기&#39;)" title="들여쓰기" tabindex="-1"
+                                            hidefocus="true" role="button" aria-labelledby="cke_43_label"
+                                            aria-describedby="cke_43_description" aria-haspopup="false"
+                                            aria-disabled="false"
+                                            onkeydown="return CKEDITOR.tools.callFunction(74,event);"
+                                            onfocus="return CKEDITOR.tools.callFunction(75,event);"
+                                            onclick="CKEDITOR.tools.callFunction(76,this);return false;"><span
+                                            class="cke_button_icon cke_button__indent_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -408px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_43_label" class="cke_button_label cke_button__indent_label"
+                                            aria-hidden="false">들여쓰기</span><span id="cke_43_description"
+                                                                                 class="cke_button_label"
+                                                                                 aria-hidden="false"></span></a><span
+                                            class="cke_toolbar_separator" role="separator"></span><a id="cke_44"
+                                                                                                     class="cke_button cke_button__blockquote cke_button_off"
+                                                                                                     href="javascript:void(&#39;인용 단락&#39;)"
+                                                                                                     title="인용 단락"
+                                                                                                     tabindex="-1"
+                                                                                                     hidefocus="true"
+                                                                                                     role="button"
+                                                                                                     aria-labelledby="cke_44_label"
+                                                                                                     aria-describedby="cke_44_description"
+                                                                                                     aria-haspopup="false"
+                                                                                                     aria-disabled="false"
+                                                                                                     onkeydown="return CKEDITOR.tools.callFunction(77,event);"
+                                                                                                     onfocus="return CKEDITOR.tools.callFunction(78,event);"
+                                                                                                     onclick="CKEDITOR.tools.callFunction(79,this);return false;"><span
+                                            class="cke_button_icon cke_button__blockquote_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 -168px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_44_label" class="cke_button_label cke_button__blockquote_label"
+                                            aria-hidden="false">인용 단락</span><span id="cke_44_description"
+                                                                                  class="cke_button_label"
+                                                                                  aria-hidden="false"></span></a></span><span
+                                            class="cke_toolbar_end"></span></span><span id="cke_45" class="cke_toolbar"
+                                                                                        aria-labelledby="cke_45_label"
+                                                                                        role="toolbar"><span
+                                            id="cke_45_label" class="cke_voice_label">스타일</span><span
+                                            class="cke_toolbar_start"></span><span id="cke_9"
+                                                                                   class="cke_combo cke_combo__styles cke_combo_off"
+                                                                                   role="presentation"><span
+                                            id="cke_9_label" class="cke_combo_label">스타일</span><a
+                                            class="cke_combo_button" title="전체 구성 스타일" tabindex="-1"
+                                            href="javascript:void(&#39;전체 구성 스타일&#39;)" hidefocus="true" role="button"
+                                            aria-labelledby="cke_9_label" aria-haspopup="listbox"
+                                            onkeydown="return CKEDITOR.tools.callFunction(81,event,this);"
+                                            onfocus="return CKEDITOR.tools.callFunction(82,event);"
+                                            onclick="CKEDITOR.tools.callFunction(80,this);return false;"><span
+                                            id="cke_9_text" class="cke_combo_text cke_combo_inlinelabel">스타일</span><span
+                                            class="cke_combo_open"><span
+                                            class="cke_combo_arrow"></span></span></a></span><span id="cke_10"
+                                                                                                   class="cke_combo cke_combo__format cke_combo_off"
+                                                                                                   role="presentation"><span
+                                            id="cke_10_label" class="cke_combo_label">문단</span><a
+                                            class="cke_combo_button" title="문단 형식" tabindex="-1"
+                                            href="javascript:void(&#39;문단 형식&#39;)" hidefocus="true" role="button"
+                                            aria-labelledby="cke_10_label" aria-haspopup="listbox"
+                                            onkeydown="return CKEDITOR.tools.callFunction(84,event,this);"
+                                            onfocus="return CKEDITOR.tools.callFunction(85,event);"
+                                            onclick="CKEDITOR.tools.callFunction(83,this);return false;"><span
+                                            id="cke_10_text" class="cke_combo_text cke_combo_inlinelabel">문단</span><span
+                                            class="cke_combo_open"><span
+                                            class="cke_combo_arrow"></span></span></a></span><span
+                                            class="cke_toolbar_end"></span></span><span id="cke_46"
+                                                                                        class="cke_toolbar cke_toolbar_last"
+                                                                                        aria-labelledby="cke_46_label"
+                                                                                        role="toolbar"><span
+                                            id="cke_46_label" class="cke_voice_label">about</span><span
+                                            class="cke_toolbar_start"></span><span class="cke_toolgroup"
+                                                                                   role="presentation"><a id="cke_47"
+                                                                                                          class="cke_button cke_button__about cke_button_off"
+                                                                                                          href="javascript:void(&#39;CKEditor 에 대하여&#39;)"
+                                                                                                          title="CKEditor 에 대하여"
+                                                                                                          tabindex="-1"
+                                                                                                          hidefocus="true"
+                                                                                                          role="button"
+                                                                                                          aria-labelledby="cke_47_label"
+                                                                                                          aria-describedby="cke_47_description"
+                                                                                                          aria-haspopup="false"
+                                                                                                          aria-disabled="false"
+                                                                                                          onkeydown="return CKEDITOR.tools.callFunction(86,event);"
+                                                                                                          onfocus="return CKEDITOR.tools.callFunction(87,event);"
+                                                                                                          onclick="CKEDITOR.tools.callFunction(88,this);return false;"><span
+                                            class="cke_button_icon cke_button__about_icon"
+                                            style="background-image:url(&#39;http://192.168.50.68:9080/html/egovframework/com/cmm/utl/ckeditor/plugins/icons.png?t=K5H9&#39;);background-position:0 0px;background-size:auto;">&nbsp;</span><span
+                                            id="cke_47_label" class="cke_button_label cke_button__about_label"
+                                            aria-hidden="false">CKEditor 에 대하여</span><span id="cke_47_description"
+                                                                                           class="cke_button_label"
+                                                                                           aria-hidden="false"></span></a></span><span
+                                            class="cke_toolbar_end"></span></span></span></span>
+                                            <div id="cke_1_contents" class="cke_contents cke_reset" role="presentation"
+                                                 style="height: 500px;"><span id="cke_52" class="cke_voice_label">도움이 필요하면 ALT 0 을 누르세요</span>
+                                                <iframe src="./saved_resource.html" frameborder="0"
+                                                        class="cke_wysiwyg_frame cke_reset"
+                                                        style="width: 100%; height: 100%;" title="리치 텍스트 편집기, nttCn"
+                                                        aria-describedby="cke_52" tabindex="0"
+                                                        allowtransparency="true"></iframe>
+                                            </div>
+                                            <span id="cke_1_bottom" class="cke_bottom cke_reset_all" role="presentation"
+                                                  style="user-select: none;"><span id="cke_1_resizer"
+                                                                                   class="cke_resizer cke_resizer_vertical cke_resizer_ltr"
+                                                                                   title="크기 조절"
+                                                                                   onmousedown="CKEDITOR.tools.callFunction(0, event)">◢</span><span
+                                                id="cke_1_path_label" class="cke_voice_label">요소 경로</span><span
+                                                id="cke_1_path" class="cke_path" role="group"
+                                                aria-labelledby="cke_1_path_label"><span
+                                                class="cke_path_empty">&nbsp;</span></span></span></div>
+                                    </div>
+                                    <div></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="file_1">첨부파일</label></th>
+                                <td colspan="3">
+                                    <input name="file_1" id="egovComFileUploader" type="file" title="첨부파일" multiple="">
+                                    <!-- 첨부파일 -->
+                                    <div id="egovComFileList"></div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="btnArea">
+                        <input type="submit" class="btn_l on" value="수정" title="수정 버튼"><!-- 수정 -->
+                        <span class="btn_l cancel"><a
+                            href="http://192.168.50.68:9080/cop/bbs/selectArticleList.do?bbsId=BBSMSTR_000000000051"
+                            title="목록 버튼">목록</a></span><!-- 목록 -->
+                    </div>
+
+                </div>
+
+                <input type="hidden" name="pageIndex" value="1">
+                <input type="hidden" name="bbsTyCode" value="BBST01">
+                <input type="hidden" name="replyPosblAt" value="Y">
+                <input type="hidden" name="fileAtchPosblAt" value="Y">
+                <input type="hidden" name="atchPosblFileNumber" id="atchPosblFileNumber" value="3">
+                <input type="hidden" name="atchPosblFileSize" value="">
+                <input type="hidden" name="tmplatId" value="">
+                <input type="hidden" name="nttId" value="261">
+                <input type="hidden" name="bbsId" value="BBSMSTR_000000000051">
+            </form>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: "libraryList"
+    }
+</script>
+
+<style scoped>
+    .container2 {
+        padding: 30px 15px;
+        min-height: calc(100% - 123px);
+        position: relative;
+    }
+</style>
