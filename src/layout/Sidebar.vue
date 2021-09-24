@@ -7,8 +7,9 @@
                 <li><router-link :to="{path:'/main/list'}">목록</router-link></li>
                 <li><router-link :to="{path:'/main/modify'}">수정</router-link></li>
                 <li><router-link :to="{path:'/main/detail'}">상세</router-link></li>
+                <router-link :to="{path:'/main/search'}"><li class="solid-navy">검색</li></router-link>
                 <li class="solid-navy">로그아웃</li>
-                <li class="solid-navy">신규등록</li>
+                <router-link :to="{path:'/main/register'}"><li class="solid-navy">신규등록</li></router-link>
                 <li class="solid-navy">나의 요청 목록</li>
                 <li class="solid-navy">나의 메시지함</li>
 
@@ -25,13 +26,6 @@
                         </div>
                     </section>
 
-
-                    <section class="container">
-                        <div class="content">
-                            <input type="email" name="email" id="email" class="inpt" required="required" placeholder="제작자">
-                            <label for="email">Producer</label>
-                        </div>
-                    </section>
                     <!-- 제작 정보 EditBox 코드 끝 .20210526 -->
 
                     <div class="solid-navy" style="margin-bottom: 0px;">객체분류코드</div>

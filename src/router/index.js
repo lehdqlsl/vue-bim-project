@@ -4,6 +4,8 @@ import MainLayout from "../layout/MainLayout"
 import LibraryDetail from "../pages/LibraryDetail";
 import LibraryList from "../pages/LibraryList";
 import LibraryModify from "../pages/LibraryModify";
+import LibrarySearch from "../pages/LibrarySearch";
+import LibraryRegister from "../pages/LibraryRegister";
 
 Vue.use(VueRouter)
 
@@ -16,6 +18,14 @@ const routes = [
         path: '/main',
         component: MainLayout,
         children: [
+            {
+                path: 'register',
+                component: LibraryRegister
+            },
+            {
+                path: 'search',
+                component: LibrarySearch
+            },
             {
                 path: 'detail',
                 component: LibraryDetail
