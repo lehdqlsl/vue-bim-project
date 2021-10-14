@@ -11,16 +11,15 @@
     @import "./assets/css/combo.css";
     @import "./assets/css/form.css";
     @import "./assets/css/toggle.css";
+    @import "./assets/css/style.css";
     @import '~element-ui/lib/theme-chalk/index.css';
+
     .router-link-active{
         background: #444444 !important;
         color: white !important;
     }
     .el-select>.el-input {
-        margin-top:10px;
-        display: block;
-        padding-left: 8px;
-        padding-right: 8px;
+
     }
     .el-input__icon {
         line-height: 0px;
@@ -31,6 +30,22 @@
     }
 
     .el-input input::placeholder{
-        color: #444444;
+        color: #727070;
+    }
+
+    .el-form-item__label{
+        font-size: 16px;
+    }
+
+    .el-form-item__error{
+        font-size: 14px;
+    }
+
+    .el-form-item {
+        margin-bottom: 20px;
+    }
+
+    .el-checkbox__label{
+        font-size: 16px;
     }
 </style>

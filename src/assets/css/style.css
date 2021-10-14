@@ -1,5 +1,5 @@
 /* ------------------
- styling for the tables 
+ styling for the tables
    ------------------   */
 #hor-minimalist-a
 {
@@ -115,7 +115,7 @@
 #box-table-a td
 {
 	padding: 8px;
-	background: #e8edff; 
+	background: #e8edff;
 	border-bottom: 1px solid #fff;
 	color: #669;
 	border-top: 1px solid transparent;
@@ -151,7 +151,7 @@
 #box-table-b td
 {
 	padding: 8px;
-	background: #e8edff; 
+	background: #e8edff;
 	border-right: 1px solid #aabcfe;
 	border-left: 1px solid #aabcfe;
 	color: #669;
@@ -181,7 +181,7 @@
 }
 #hor-zebra .odd
 {
-	background: #e8edff; 
+	background: #e8edff;
 }
 
 
@@ -368,14 +368,7 @@
 	text-align: left;
 	border-collapse: collapse;
 }
-#rounded-corner thead th.rounded-company
-{
-	background: #b9c9fe url('images/left.png') left -1px no-repeat;
-}
-#rounded-corner thead th.rounded-q4
-{
-	background: #b9c9fe url('images/right.png') right -1px no-repeat;
-}
+
 #rounded-corner th
 {
 	padding: 8px;
@@ -391,14 +384,7 @@
 	border-top: 1px solid #fff;
 	color: #669;
 }
-#rounded-corner tfoot td.rounded-foot-left
-{
-	background: #e8edff url('images/botleft.png') left bottom no-repeat;
-}
-#rounded-corner tfoot td.rounded-foot-right
-{
-	background: #e8edff url('images/botright.png') right bottom no-repeat;
-}
+
 #rounded-corner tbody tr:hover td
 {
 	background: #d0dafd;
@@ -413,7 +399,6 @@
 	width: 480px;
 	text-align: left;
 	border-collapse: collapse;
-	background: url('images/blurry.jpg') 330px 59px no-repeat;
 }
 #background-image th
 {
@@ -432,22 +417,7 @@
 {
 	font-size: 11px;
 }
-#background-image tbody td
-{
-	background: url('images/back.png');
-}
-* html #background-image tbody td
-{
-	/* 
-	   ----------------------------
-		PUT THIS ON IE6 ONLY STYLE 
-		AS THE RULE INVALIDATES
-		YOUR STYLESHEET
-	   ----------------------------
-	*/
-	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/back.png',sizingMethod='crop');
-	background: none;
-}	
+
 #background-image tbody tr:hover td
 {
 	color: #339;
@@ -455,8 +425,7 @@
 }
 
 
-#gradient-style
-{
+#gradient-style {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
 	font-size: 12px;
 	margin: 45px;
@@ -464,51 +433,15 @@
 	text-align: left;
 	border-collapse: collapse;
 }
-#gradient-style th
-{
-	font-size: 13px;
-	font-weight: normal;
-	padding: 8px;
-	background: #b9c9fe url('images/gradhead.png') repeat-x;
-	border-top: 2px solid #d3ddff;
-	border-bottom: 1px solid #fff;
-	color: #039;
-}
-#gradient-style td
-{
-	padding: 8px; 
-	border-bottom: 1px solid #fff;
-	color: #669;
-	border-top: 1px solid #fff;
-	background: #e8edff url('images/gradback.png') repeat-x;
-}
+
 #gradient-style tfoot tr td
 {
 	background: #e8edff;
 	font-size: 12px;
 	color: #99c;
 }
-#gradient-style tbody tr:hover td
-{
-	background: #d0dafd url('images/gradhover.png') repeat-x;
-	color: #339;
-}
 
 
-#pattern-style-a
-{
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-	font-size: 12px;
-	margin: 45px;
-	width: 480px;
-	text-align: left;
-	border-collapse: collapse;
-	background: url('images/pattern.png');
-}
-#pattern-style-a thead tr
-{
-	background: url('images/pattern-head.png');
-}
 #pattern-style-a th
 {
 	font-size: 13px;
@@ -519,7 +452,7 @@
 }
 #pattern-style-a td
 {
-	padding: 8px; 
+	padding: 8px;
 	border-bottom: 1px solid #fff;
 	color: #669;
 	border-top: 1px solid transparent;
@@ -530,21 +463,6 @@
 	background: #fff;
 }
 
-
-#pattern-style-b
-{
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-	font-size: 12px;
-	margin: 45px;
-	width: 480px;
-	text-align: left;
-	border-collapse: collapse;
-	background: url('images/patternb.png');
-}
-#pattern-style-b thead tr
-{
-	background: url('images/patternb-head.png');
-}
 #pattern-style-b th
 {
 	font-size: 13px;
@@ -555,7 +473,7 @@
 }
 #pattern-style-b td
 {
-	padding: 8px; 
+	padding: 8px;
 	border-bottom: 1px solid #fff;
 	color: #669;
 	border-top: 1px solid transparent;

@@ -1,7 +1,7 @@
 <template>
     <div id="subTop_areabg">
-        <div class="inner">
-            <div>
+        <div class="inner" style="width: 60%;">
+            <div style="">
                 <span>생애주기별 항만시설 통합 운영관리를 위한</span>
                 <b>항만BIM 정보플랫폼</b>
             </div>

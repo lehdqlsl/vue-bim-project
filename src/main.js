@@ -6,7 +6,6 @@ import store from './store'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/ko'
 
-
 Vue.use(ElementUI, {locale})
 Vue.config.productionTip = false
 

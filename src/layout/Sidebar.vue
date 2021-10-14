@@ -4,14 +4,14 @@
             <div class="lnbTop"><span>HARBOUR<b>BIM</b></span></div>
             <ul class="2depth">
                 <!-- <li><a href="/boffice/cde/cdeProjectList.do" target="_content" class="link"> 1. CDE 등록</a></li> -->
-                <li><router-link :to="{path:'/main/list'}">목록</router-link></li>
-                <li><router-link :to="{path:'/main/modify'}">수정</router-link></li>
+<!--                <li><router-link :to="{path:'/main/list'}">목록</router-link></li>-->
+<!--                <li><router-link :to="{path:'/main/modify'}">수정</router-link></li>-->
                 <li><router-link :to="{path:'/main/detail'}">상세</router-link></li>
                 <router-link :to="{path:'/main/search'}"><li class="solid-navy">검색</li></router-link>
                 <li class="solid-navy">로그아웃</li>
                 <router-link :to="{path:'/main/register'}"><li class="solid-navy">신규등록</li></router-link>
-                <li class="solid-navy">나의 요청 목록</li>
-                <li class="solid-navy">나의 메시지함</li>
+                <router-link :to="{path:'/main/request'}"><li class="solid-navy">나의 요청 목록</li></router-link>
+                <router-link :to="{path:'/main/list'}"><li class="solid-navy">나의 메시지함</li></router-link>
 
                 <h1 style="font-family:Arial; margin-left: 15px; font-size:20px; color:#000000; margin-top: 40px; margin-bottom: 40px;">| 검색 필터</h1>
 
@@ -33,7 +33,7 @@
                     <!-- 객체분류코드 Radio Button 코드 시작 .20210524 (combo.css)-->
                     <div style="color: #444444">
                     <tr>
-                        <td>
+                        <td style="padding-top:10px; padding-left: 10px;">
                             <el-select v-model="value1" placeholder="건설시설">
                                 <el-option
                                     style="margin: 10px"
@@ -44,7 +44,7 @@
                                 </el-option>
                             </el-select>
                         </td>
-                        <td>
+                        <td style="padding-top:10px; padding-right: 10px; padding-left: 10px;">
                             <el-select v-model="value2" placeholder="시설요소">
                                 <el-option
                                     v-for="item in options2"
@@ -56,7 +56,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
+                        <td style="padding-top:10px; padding-left: 10px;">
                             <el-select v-model="value3" placeholder="단위시설">
                                 <el-option
                                     style="margin: 10px"
@@ -67,7 +67,7 @@
                                 </el-option>
                             </el-select>
                         </td>
-                        <td>
+                        <td style="padding-top:10px; padding-right: 10px; padding-left: 10px;">
                             <el-select v-model="value4" placeholder="시설유형">
                                 <el-option
                                     v-for="item in options4"

@@ -6,6 +6,7 @@ import LibraryList from "../pages/LibraryList";
 import LibraryModify from "../pages/LibraryModify";
 import LibrarySearch from "../pages/LibrarySearch";
 import LibraryRegister from "../pages/LibraryRegister";
+import LibraryRequest from "../pages/LibraryRequest";
 
 Vue.use(VueRouter)
 
@@ -37,6 +38,10 @@ const routes = [
             {
                 path: 'modify',
                 component: LibraryModify
+            },
+            {
+                path: 'request',
+                component: LibraryRequest
             }
         ]
     },
