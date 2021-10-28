@@ -8,7 +8,7 @@
 <!--                <li><router-link :to="{path:'/main/modify'}">수정</router-link></li>-->
                 <li><router-link :to="{path:'/main/detail'}">상세</router-link></li>
                 <router-link :to="{path:'/main/search'}"><li class="solid-navy">검색</li></router-link>
-                <li class="solid-navy">로그아웃</li>
+                <li class="solid-navy" @click="logout" >로그아웃</li>
                 <router-link :to="{path:'/main/register'}"><li class="solid-navy">신규등록</li></router-link>
                 <router-link :to="{path:'/main/request'}"><li class="solid-navy">나의 요청 목록</li></router-link>
                 <router-link :to="{path:'/main/list'}"><li class="solid-navy">나의 메시지함</li></router-link>
@@ -166,6 +166,9 @@
 </template>
 
 <script>
+    import keyclock from 'keycloak-js'
+    import Keycloak from "keycloak-js";
+
     export default {
         data() {
             return {
@@ -237,6 +240,23 @@
                 value2: '',
                 value3: '',
                 value4: ''
+            }
+        },
+        methods : {
+            logout() {
+                let initOptions = {
+                    url: `http://ssobim.injecloud.co.kr:50880/auth`,
+                    realm: `BIM`,
+                    clientId: `portal`
+                };
+
+
+                let keycloak = Keycloak(initOptions);
+                keycloak.init({
+                    onLoad: 'check-sso',
+                }).then(function (authenticated) {
+                    console.log(authenticated)
+                })
             }
         }
     }

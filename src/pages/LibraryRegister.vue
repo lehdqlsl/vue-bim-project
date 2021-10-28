@@ -125,6 +125,8 @@
 
 <script>
     import JsZip from 'jszip'
+
+
     // 동빈,
     // 추후 파일첨부에 커스텀 룰 적용필요
 
@@ -206,6 +208,9 @@
                     ]
                 }
             };
+        },
+        mounted() {
+
         },
         methods: {
             submitForm(formName) {
